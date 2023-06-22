@@ -18,7 +18,7 @@ $dns = [ordered]@{
 # $dns
 foreach ($key in $dns.Keys) {
     Write-Host "${key}: $($dns.Item($key))";
-    Get-Date | Out-File -Append ping$key.txt;
+    Get-Date | Out-File ping$key.txt;
     ping /n 20 /l 4 $($dns.Item($key)) | Out-File -Append ping$key.txt;
 }
 Get-Date;
