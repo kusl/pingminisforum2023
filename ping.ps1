@@ -22,6 +22,11 @@ foreach ($key in $dns.Keys) {
     ping /n 20 /l 4 $($dns.Item($key)) | Out-File -Append ping$key.txt;
 }
 Get-Date;
+"# For learning purposes only" | Out-File README.md
+"This repo is for learning purposes only." | Out-File -Append README.md
+"Last updated at" | Out-File -Append README.md
+Get-Date | Out-File -Append README.md
+
 git add .;
 git commit -m "add ping";
 git push origin --all;
